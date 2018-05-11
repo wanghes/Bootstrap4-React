@@ -1,5 +1,5 @@
 # Bootstrap4-React
-Bootstrap 4.1.1 and React React组件化Bootstrap4.1.1
+React组件化Bootstrap4.1.1（Bootstrap 4.1.1 and React） 
 
 ## init command
 npm install
