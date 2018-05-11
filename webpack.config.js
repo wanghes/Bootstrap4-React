@@ -115,7 +115,6 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = 'cheap-module-eval-source-map'
     module.exports.plugins = (module.exports.plugins || []).concat([
         HTMLWebpackPluginConfig,
-        new webpack.HotModuleReplacementPlugin(),
         new FriendlyErrorsWebpackPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',

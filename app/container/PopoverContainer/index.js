@@ -69,7 +69,7 @@ class Container extends React.Component {
                     <span>{name}</span>
                 </Popover>
                 <Popover
-                position="right"
+                position="bottom"
                 content="最经典的方法，使用Array的slice方法，此方法如果不传参数的话会返回原数组的一个拷贝，因此可以用此方法转换类数组到数组">
                     <span>{name}</span>
                 </Popover>
