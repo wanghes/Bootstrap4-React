@@ -1,0 +1,15 @@
+.box{
+    .row {
+        margin-right: -15px;
+        .col-3{
+            padding-right:15px;
+            margin-bottom: 15px;
+            .card{
+                transition: all .3s linear;
+                &:hover{
+                    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+                }
+            }
+        }
+    }
+}

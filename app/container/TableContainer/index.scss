@@ -1,0 +1,34 @@
+.box{
+    .loading_data{
+        text-align: center;
+    }
+    table {
+        line-height: 50px;
+        thead{
+            th{
+                padding: 0 15px;
+            }
+            th:nth-child(1) {
+                text-align: center;
+            }
+             th:nth-child(3) {
+                text-align: center;
+            }
+        }
+        tbody {
+            td{
+                padding: 0 15px;
+            }
+            td:nth-child(1) {
+                text-align: center;
+            }
+            td:nth-child(3) {
+                text-align: center;
+            }
+        }
+        img{
+            cursor: pointer;
+            border:1px solid #fff;
+        }
+    }
+}
