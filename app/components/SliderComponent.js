@@ -23,7 +23,7 @@ class Component extends React.Component{
 			<div className="wrap">
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div className="collapse navbar-collapse">
-                        <Link className="navbar-brand" to="/">React & BootStrap 4.0</Link>
+                        <Link className="navbar-brand" to="/">React & BootStrap 4.1.1</Link>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
                               <Link className="nav-item nav-link active" to="/">首页</Link>

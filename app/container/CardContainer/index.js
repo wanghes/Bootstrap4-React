@@ -2,16 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Highlight from 'react-highlight';
 import { bindActionCreators } from 'redux';
-import { Toast, Alert } from '../../components/index';
+import { Toast, Alert, Breadcrumb } from '../../components/index';
 import * as actionCreaters from '../../actions/cardAction';
 import "./index.scss"
-const img  = require('../../assets/images/s.jpg');
 
 const Card = (props) => {
     return (
         <div className="col-3">
             <div className="card">
-                <img className="card-img-top" src={ props.pic } alt="Card image cap" />
+                <img className="card-img-top" src={ props.pic } alt={ props.title } />
                 <div className="card-body">
                     <h4 className="card-title">{ props.author }</h4>
                     <h6 className="card-subtitle mb-2 text-muted">{ props.date }</h6>
@@ -82,14 +81,15 @@ class Container extends React.Component {
                 return (<div className="row no-gutters">正在加载数据...</div>)
             }
         }
+        const breadcrumb = [{
+            name:'BootStrap 4.1.1',
+            href:"/"
+        },{
+            name:'卡片'
+        }];
         return (
             <div className="container-fluid box">
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">BootStrap 4.0</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">卡片</li>
-                    </ol>
-                </nav>
+                <Breadcrumb list= { breadcrumb } />
                 <List />
                 <hr/>
                 <Highlight>{ CardHtml }</Highlight>

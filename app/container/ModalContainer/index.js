@@ -2,7 +2,7 @@ import React from 'react';
 import style from "./index.scss";
 import { Markup } from 'interweave';
 import Highlight from 'react-highlight';
-
+import { Toast, Alert, Breadcrumb } from '../../components/index';
 
 const Modal = (props) => {
     return (
@@ -67,14 +67,15 @@ class Container extends React.Component {
                 backdrop: false
             });
         };
+        const breadcrumb = [{
+            name:'BootStrap 4.1.1',
+            href:"/"
+        },{
+            name:'弹出层'
+        }];
         return (
             <div className="container-fluid box">
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">BootStrap 4.0</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">弹出层</li>
-                    </ol>
-                </nav>
+                <Breadcrumb list={ breadcrumb } />
                 <button className="btn btn-secondary btn-sm" onClick={ alertInfo }>弹出</button>
                 <Modal title="测试标题" id="exampleModalCenter">
                     <p>困了累了喝红牛，虚了尿了喝红牛</p>

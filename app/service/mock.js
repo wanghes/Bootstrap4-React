@@ -6,7 +6,7 @@ Mock.setup({timeout:'0-10'});
 // mock一组数据
 const produceNewsData = () => {
     let articles = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         let newArticleObject = {
             title: Random.csentence(5, 30), //  Random.csentence( min, max )
             thumbnail_pic_s: Random.dataImage('300x250', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
@@ -24,7 +24,7 @@ const produceNewsData = () => {
 // mock一组数据
 const cards = () => {
     let cards = [];
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 5; i++) {
         let card = {
             title: Random.csentence(30), //  Random.csentence( min, max )
             thumbnail_pic_s: Random.dataImage('286x180', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码

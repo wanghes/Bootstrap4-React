@@ -1,5 +1,5 @@
 {
-  "name": "non_es2015_react_hot_loader",
+  "name": "bootstrap_react",
   "version": "1.0.0",
   "description": "no",
   "main": "no",
@@ -12,7 +12,8 @@
     "url": "no"
   },
   "keywords": [
-    "react_hot_loader"
+    "bootstrap",
+    "react"
   ],
   "author": "wang_hes",
   "license": "ISC",

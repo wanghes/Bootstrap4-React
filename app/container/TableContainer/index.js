@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Highlight from 'react-highlight';
 import { bindActionCreators } from 'redux';
+import { Toast, Alert, Breadcrumb } from '../../components/index';
 import * as actionCreaters from '../../actions/postAction';
 import "./index.scss"
 
@@ -65,15 +66,16 @@ class Container extends React.Component {
                 )
             }
         }
+        const breadcrumb = [{
+            name:'BootStrap 4.1.1',
+            href:"/"
+        },{
+            name:'表格'
+        }];
+
         return (
             <div className="container-fluid box">
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">BootStrap 4.0</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">表格</li>
-                    </ol>
-                </nav>
-
+                <Breadcrumb list={ breadcrumb } />
                 <table className="table table-sm table-striped table-dark table-hover table-bordered">
                     <thead>
                         <tr>

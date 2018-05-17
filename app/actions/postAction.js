@@ -1,5 +1,5 @@
 const api_url = "http://test.com"
-import api from './../lib/api.js'
+import api from './../service/api.js'
 
 export function updatePostsAction(items){
     return { type: 'posts_list', items }

@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: __dirname + '/dist',
         publicPath: '/',
-        filename: "index_bundle.js"
+        filename: "bundle.js"
     },
     module: {
         rules: [
@@ -56,14 +56,23 @@ module.exports = {
                     ]
                 })
             },{
-                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                use: ['file-loader?name=/assets/fonts/[name]-[hash].[ext]']
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].[ext]",
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
             }, {
                 test: /\.(png|jpe?g|gif)(\?\S*)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]?[hash]'
+                        name: '[name].[ext]?[hash]',
+                        outputPath: 'images/'
                     }
                 }]
             }
@@ -80,7 +89,7 @@ if (process.env.NODE_ENV === 'production') {
     ];
     module.exports.devtool = 'source-map'
     module.exports.plugins = (module.exports.plugins || []).concat([
-         new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
@@ -93,7 +102,7 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new UglifyJSPlugin(),
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: 'css/style.css',
             allChunks: true
         }),
         HTMLWebpackPluginConfig
@@ -123,7 +132,7 @@ if (process.env.NODE_ENV === 'production') {
             'window.$': 'jquery',
         }),
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: 'css/style.css',
             allChunks: true,
             //disable: process.env.NODE_ENV !== 'production'
         }),

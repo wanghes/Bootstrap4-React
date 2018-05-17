@@ -1,4 +1,4 @@
-import api from './../lib/api.js'
+import api from './../service/api.js'
 
 export function updateCardsAction(items){
     return { type: 'cards_list', items }

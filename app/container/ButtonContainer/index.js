@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Highlight from 'react-highlight';
-import json from "./test";
-import { Toast } from '../../components';
+import { Toast, Alert, Breadcrumb } from '../../components/index';
 import "./index.scss";
 
 class Container extends React.Component {
@@ -31,16 +30,16 @@ class Container extends React.Component {
 <button className="btn btn-dark">{ textName }</button>
 `
 
-
+        const breadcrumb = [{
+            name:'BootStrap 4.1.1',
+            href:"/"
+        },{
+            name:'按钮'
+        }];
 
         return (
             <div className="container-fluid box">
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">BootStrap 4.0</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">按钮</li>
-                    </ol>
-                </nav>
+                <Breadcrumb list= { breadcrumb } />
                 <button className="btn btn-light" onClick={() => this.clickHandle(textName)}>{ textName }</button>
                 <button className="btn btn-secondary" onClick={() => this.clickHandle(textName)}>{ textName }</button>
                 <button className="btn btn-primary" onClick={() => this.clickHandle(textName)} >{ textName }</button>

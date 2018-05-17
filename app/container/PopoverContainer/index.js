@@ -2,7 +2,7 @@ import React from 'react';
 import style from "./index.scss";
 import { Markup } from 'interweave';
 import Highlight from 'react-highlight';
-
+import { Toast, Alert, Breadcrumb } from '../../components/index';
 
 const Popover = (props) => {
     return (
@@ -38,14 +38,16 @@ class Container extends React.Component {
 
     render() {
         const { name } = this.state;
+        const breadcrumb = [{
+            name:'BootStrap 4.1.1',
+            href:"/"
+        },{
+            name:'Popover'
+        }];
+
         return (
             <div className="container-fluid box">
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="/">BootStrap 4.0</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">Popover</li>
-                    </ol>
-                </nav>
+                <Breadcrumb list={ breadcrumb } />
                 <br />
                 <br />
                 <br />

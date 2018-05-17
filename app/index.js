@@ -2,9 +2,8 @@ import  React  from 'react';
 import  ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import store from "./store";
-import './lib/mock.js'; // 引入mockjs
-import  "./scss/main.scss";
-import './assets/css/highlight.css';
+import './service/mock.js'; // 引入mockjs
+import  "./assets/scss/main.scss";
 import './assets/js/lib/bootstrap.bundle.js';
 
 import  Wrap  from  './container/Wrap';
