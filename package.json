@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-preset-stage-0": "^6.24.1",
     "exports-loader": "^0.6.4",
     "interweave": "^8.1.0",
     "jquery": "^3.2.1",

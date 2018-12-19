@@ -39,6 +39,24 @@ const cards = () => {
     }
 }
 
+
+// mock一组数据
+const listGroup = () => {
+    let items = [];
+    for (let i = 0; i < 10; i++) {
+        let item = {
+            title: Random.csentence(30)
+        }
+        items.push(item)
+    }
+
+    return {
+        items
+    }
+}
+
+
 Mock.mock('/api/posts', 'post', produceNewsData);
 Mock.mock('/api/cards', 'post', cards);
+Mock.mock('/api/listGroup', 'post', listGroup);
 

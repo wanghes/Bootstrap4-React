@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin  = require('extract-text-webpack-plugin');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin'); //依赖 uglify-js 仓库
@@ -6,6 +7,7 @@ var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: __dirname + '/app/index.html',
     filename: 'index.html',
+    favicon : path.resolve('favicon.ico'),
     inject: 'body'
 });
 

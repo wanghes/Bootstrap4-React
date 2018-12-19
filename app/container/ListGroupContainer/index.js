@@ -1,17 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import style from "./index.scss";
 import { Markup } from 'interweave';
 import Highlight from 'react-highlight';
+import * as actionCreaters from '../../actions/postAction';
 import { Toast, Alert, Breadcrumb } from '../../components/index';
 
 const ListGroup = (props) => {
+    const { list } = props;
     return (
         <ul className="list-group">
-            <li className="list-group-item active">Cras justo odio</li>
-            <li className="list-group-item">Dapibus ac facilisis in</li>
-            <li className="list-group-item">Morbi leo risus</li>
-            <li className="list-group-item">Porta ac consectetur ac</li>
-            <li className="list-group-item">Vestibulum at eros</li>
+            {
+                list && list.map((item, index) => {
+                    let active = index == 0 ? 'list-group-item active' : 'list-group-item';
+                    return (<li key={ index } className={ active }>{ item.title }</li>);
+                })
+            }
         </ul>
     )
 }
@@ -20,7 +25,6 @@ class Container extends React.Component {
     constructor(props,context){
         super(props);
         this.state = {
-            name: '测试按钮',
             html:
 `<ul class="list-group">
     <li class="list-group-item active">Cras justo odio</li>
@@ -33,8 +37,15 @@ class Container extends React.Component {
         };
     }
 
+    componentDidMount() {
+        const { getListsAction } = this.props;
+        getListsAction();
+    }
+
     render() {
         const { name } = this.state;
+        const { items } = this.props;
+
         const breadcrumb = [{
             name:'BootStrap 4.1.1',
             href:"/"
@@ -44,7 +55,7 @@ class Container extends React.Component {
         return (
             <div className="container-fluid box">
                 <Breadcrumb list= { breadcrumb } />
-                <ListGroup />
+                <ListGroup list={ items } />
                 <hr/>
                 <Highlight className="html">
                     { this.state.html }
@@ -54,4 +65,21 @@ class Container extends React.Component {
     };
 };
 
-export default Container;
+function mapStateToProps(state) {
+    return {
+        items: state.posts.listGroup
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    let boundActionCreators = bindActionCreators(actionCreaters, dispatch)
+    return boundActionCreators;
+}
+
+
+const ContainerWrap = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Container);
+
+export default ContainerWrap;

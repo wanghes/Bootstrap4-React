@@ -1,5 +1,5 @@
-import './index.scss';
 import React from 'react';
+import './index.scss';
 
 class Component extends React.Component {
     constructor(props) {
@@ -14,13 +14,13 @@ class Component extends React.Component {
                     {
                         list.map((item, index) => {
                             if (index == 0) {
-                                return (<li className="breadcrumb-item"><a href={ item.href }>{ item.name }</a></li>)
+                                return (<li key={ index } className="breadcrumb-item"><a href={ item.href }>{ item.name }</a></li>)
                             } else if (index == (list.length-1)) {
                                 return (
-                                    <li className="breadcrumb-item active" aria-current="page">{ item.name }</li>
+                                    <li key={ index } className="breadcrumb-item active" aria-current="page">{ item.name }</li>
                                 )
                             } else {
-                                return (<li className="breadcrumb-item"><a href={ item.href }>{ item.name }</a></li>)
+                                return (<li key={ index } className="breadcrumb-item"><a href={ item.href }>{ item.name }</a></li>)
                             }
 
                         })

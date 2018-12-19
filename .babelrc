@@ -1,10 +1,11 @@
 {
   "presets": [
         ["env",{
-        	targets:{
-        		uglify:true
+        	"targets":{
+        		"uglify": true
         	}
         }],
+        "stage-0",
         "react"
     ],
     "plugins": [

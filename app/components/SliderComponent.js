@@ -31,8 +31,8 @@ class Component extends React.Component{
                         </div>
                     </div>
                     <form className="form-inline">
-                        <input className="form-control mr-sm-2" type="search" placeholder="请填写搜索关键字" />
-                        <button className="btn btn-outline-danger my-2 my-sm-0" onClick={ this.searchFunc }
+                        <input className="form-control mr-sm-2 form-control-sm" type="search" placeholder="请填写搜索关键字" />
+                        <button className="btn btn-danger btn-sm my-2 my-sm-0" onClick={ this.searchFunc }
                         type="button">搜索</button>
                     </form>
                 </nav>
